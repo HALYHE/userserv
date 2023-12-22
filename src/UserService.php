@@ -12,6 +12,7 @@ class UserService
             if ($ascending) {
                 return strcmp($a->username, $b->username);
             }
+            return strcmp($b->username, $a->username);
         });
 
         return $users;
@@ -23,6 +24,7 @@ class UserService
             if ($ascending) {
                 return $a->birthday <=> $b->birthday;
             }
+            return $b->birthday <=> $a->birthday;
         });
 
         return $users;
